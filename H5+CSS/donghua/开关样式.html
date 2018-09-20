@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			.switch{
+				position: relative;
+				width: 60px;
+				height: 34px;
+				display: inline-block;
+			}
+			.switch input{
+				display: none;
+			}
+			.slider{
+				position: absolute;
+				cursor: pointer;
+				top: 0;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				background-color: #ccc;
+				transition: 1s;
+			}
+			.slider:before{
+				position: absolute;
+				content: '';
+				width: 26px;
+				height: 26px;
+				left: 4px;
+				bottom: 4px;
+				background-color: white;
+				transition: 1s;
+			}
+			input:checked+.slider{
+				background-color: cornflowerblue;
+			}
+			input:checked+.slider:before{
+				transform: translateX(26px);
+			}
+			.radius{
+				border-radius: 60px;
+			}
+			.radius:before{
+				border-radius: 50%;
+			}
+		</style>
+	</head>
+	<body>
+		<label class="switch">
+			<input type="checkbox" />
+			<div class="slider"></div>
+		</label>
+		<label class="switch">
+			<input type="checkbox" checked />
+			<div class="slider"></div>
+		</label>
+		<label class="switch">
+			<input type="checkbox"/>
+			<div class="slider radius"></div>
+		</label>
+		<label class="switch">
+			<input type="checkbox" checked />
+			<div class="slider radius"></div>
+		</label>
+	</body>
+</html>

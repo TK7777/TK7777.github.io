@@ -1,0 +1,52 @@
+.big-box {
+	display: inline-block;
+	width: 200px;
+	height: 200px;
+	box-shadow: 0 3px 5px #ddd;
+}
+
+p {
+	text-align: center;
+}
+
+.box {
+	width: 100px;
+	height: 100px;
+	background-color: #ccc;
+	margin: 20px auto;
+}
+
+.rotate .fill {
+	width: 100px;
+	height: 100px;
+	background: #03A9F4;
+	opacity: .5;
+	transition: .6s;
+}
+
+.rotate .fill:hover {
+	transform: rotate(45deg);
+}
+
+.rotateX .fill {
+	width: 100px;
+	height: 100px;
+	background: #03A9F4;
+	opacity: .5;
+	transition: .6s;
+}
+
+.rotateX .fill:hover {
+	transform: rotateX(45deg);
+}
+.skew .fill {
+	width: 100px;
+	height: 100px;
+	background: #03A9F4;
+	opacity: .5;
+	transition: .6s;
+}
+
+.skew .fill:hover {
+	transform: skew(45deg,45deg);
+}

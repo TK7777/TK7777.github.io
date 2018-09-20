@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<title>导航条</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+		<link rel="stylesheet" href="css/bootstrap.css" />
+		<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+		<script type="text/javascript" src="js/bootstrap.js"></script>
+		<script type="text/javascript" src="js/index.js" ></script>
+		<style>
+			html,
+			body {
+				height: 100%;
+			}
+			
+			.navbar .badge {
+				background: #5cb85c;
+			}
+			
+			.breadcrumb>li+li:before {
+				content: ">>";
+			}
+			
+			.main {
+				padding-top: 51px;
+			}
+			
+			.main .navbar {
+				border-right: 0px;
+				margin: 0px -15px;
+			}
+			
+			.main,
+			.main>.row,
+			.main .leftbar {
+				height: 100%;
+			}
+			
+			.main .leftbar {
+				overflow-y: auto;
+			}
+			/*修改滚动条的样式*/
+			
+			::-webkit-scrollbar {
+				width: 16px;
+				height: 1px;
+			}
+			/* 设置滚动条条的样式*/
+			
+			::-webkit-scrollbar-thumb {
+				border-radius: 10px;
+				-webkit-box-shadow: inset 0 0 5px rgba(255, 255, 255, 0.5);
+				background: #535353;
+			}
+			
+			::-webkit-scrollbar-track {
+				-webkit-box-shadow: inset 0 0 5px rgba(100, 100, 100, 0.2);
+				border-radius: 10px;
+			}
+			
+			.main .nav>li>a {
+				color: #ddd;
+			}
+			
+			.nav>li>a:hover,
+			.nav>li>a:focus {
+				background-color: #111;
+			}
+		</style>
+	</head>
+
+	<body>
+
+		<!--定义一个导航条 navbar
+		固定位置  navbar-fixed-top[bottom]
+				    positon:relative absolute fixed  static
+		颜色:
+			navbar-default  默认颜色 #f8f8f8
+			navbar-inverse 反色
+	-->
+		<div class="navbar navbar-inverse navbar-fixed-top">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#topMenu">
+				<i class="icon-bar"></i>
+				<i class="icon-bar"></i>
+				<i class="icon-bar"></i>
+			</button>
+					<a href="#" class="navbar-brand hidden-sm">粤嵌管理后台</a>
+				</div>
+				<div class="collapse navbar-collapse" id="topMenu">
+					<ul class="nav navbar-nav">
+						<li>
+							<a href="#">内容管理</a>
+						</li>
+						<li>
+							<a href="#">用户管理</a>
+						</li>
+						<li>
+							<a href="#">客户管理</a>
+						</li>
+						<li>
+							<a href="#">栏目管理</a>
+						</li>
+						<li>
+							<a href="#">产品管理</a>
+						</li>
+						<li>
+							<a href="#">订单管理</a>
+						</li>
+						<li>
+							<a href="#">微信公众号</a>
+						</li>
+					</ul>
+					<form class="navbar-form navbar-left hidden-sm hidden-xs hidden-md">
+						<div class="input-group">
+							<input type="text" class="form-control" />
+							<span class="input-group-addon">搜索</span>
+						</div>
+					</form>
+					<ul class="nav navbar-nav navbar-right">
+						<li class="dropdown">
+							<a href="#" data-toggle="dropdown">管理操作<span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li>
+									<a href="">个人信息</a>
+								</li>
+								<li>
+									<a href="">修改密码</a>
+								</li>
+								<li>
+									<a href="">上传头像</a>
+								</li>
+								<li>
+									<a href="">站内信息<span class="badge label label-success">10</span></a>
+								</li>
+								<li class="divider"></li>
+								<li>
+									<a href="">退出登录</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+					<p class="navbar-text navbar-right hidden-sm">欢迎
+						<a href="" class="navbar-link">xx</a>登录</p>
+				</div>
+			</div>
+		</div>
+		<!--end navbar  header end-->
+		<div class="container-fluid main">
+			<div class="row">
+				<div class="col-md-2 navbar-inverse leftbar">
+					<ul class="nav navbar">
+						<li>
+							<a href="#manageuser" data-toggle="collapse">
+								<i class="glyphicon glyphicon-user" style="margin: 0 10px;"></i>用户管理
+								<span class="caret" style="float:right"></span>
+							</a>
+							<div class="list-group collapse" id="manageuser">
+								<a class="list-group-item">添加用户</a>
+								<a href="#" class="list-group-item">用户列表</a>
+								<a href="#" class="list-group-item">添加用户3</a>
+								<a href="#" class="list-group-item">添加用户4</a>
+								<a href="#" class="list-group-item">添加用户5</a>
+								<a href="#" class="list-group-item">添加用户6</a>
+							</div>
+						</li>
+						<li>
+							<a href="#managecontent" data-toggle="collapse">
+								<i class="glyphicon glyphicon-user" style="margin: 0 10px;"></i> 内容管理
+								<span class="caret" style="float:right"></span>
+							</a>
+							<div class="list-group collapse" id="managecontent">
+								<a href="#" class="list-group-item">添加用户1</a>
+								<a href="#" class="list-group-item">添加用户2</a>
+								<a href="#" class="list-group-item">添加用户3</a>
+								<a href="#" class="list-group-item">添加用户4</a>
+								<a href="#" class="list-group-item">添加用户5</a>
+								<a href="#" class="list-group-item">添加用户6</a>
+							</div>
+						</li>
+						<li>
+							<a href="#managecate" data-toggle="collapse">
+								<i class="glyphicon glyphicon-user" style="margin: 0 10px;"></i> 分类管理
+								<span class="caret" style="float:right"></span>
+							</a>
+							<div class="list-group collapse" id="managecate">
+								<a href="#" class="list-group-item">添加用户1</a>
+								<a href="#" class="list-group-item">添加用户2</a>
+								<a href="#" class="list-group-item">添加用户3</a>
+								<a href="#" class="list-group-item">添加用户4</a>
+								<a href="#" class="list-group-item">添加用户5</a>
+								<a href="#" class="list-group-item">添加用户6</a>
+							</div>
+						</li>
+						<li>
+							<a href="#managebrand" data-toggle="collapse">
+								<i class="glyphicon glyphicon-user" style="margin: 0 10px;"></i> 品牌管理
+								<span class="caret" style="float:right"></span>
+							</a>
+							<div class="list-group collapse" id="managebrand">
+								<a href="#" class="list-group-item">添加用户1</a>
+								<a href="#" class="list-group-item">添加用户2</a>
+								<a href="#" class="list-group-item">添加用户3</a>
+								<a href="#" class="list-group-item">添加用户4</a>
+								<a href="#" class="list-group-item">添加用户5</a>
+								<a href="#" class="list-group-item">添加用户6</a>
+							</div>
+						</li>
+						<li>
+							<a href="#managelevel" data-toggle='collapse'>
+								<i class="glyphicon glyphicon-user" style="margin: 0 10px;"></i> 权限管理
+								<span class="caret" style="float:right"></span>
+							</a>
+							<div class="list-group collapse" id="managelevel">
+								<a href="#" class="list-group-item">添加用户1</a>
+								<a href="#" class="list-group-item">添加用户2</a>
+								<a href="#" class="list-group-item">添加用户3</a>
+								<a href="#" class="list-group-item">添加用户4</a>
+								<a href="#" class="list-group-item">添加用户5</a>
+								<a href="#" class="list-group-item">添加用户6</a>
+							</div>
+						</li>
+						<li>
+							<a href="#manageinfo" data-toggle="collapse">
+								<i class="glyphicon glyphicon-user" style="margin: 0 10px;"></i> 个人信息
+								<span class="caret" style="float:right"></span>
+							</a>
+							<div class="list-group collapse" id="manageinfo">
+								<a href="#" class="list-group-item">添加用户1</a>
+								<a href="#" class="list-group-item">添加用户2</a>
+								<a href="#" class="list-group-item">添加用户3</a>
+								<a href="#" class="list-group-item">添加用户4</a>
+								<a href="#" class="list-group-item">添加用户5</a>
+								<a href="#" class="list-group-item">添加用户6</a>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<!--end leftbar-->
+				<div class="col-md-9 ">
+					<div class="container">
+						<div class="panel panel-warning">
+							<div class="panel-heading">
+								<h4>标题栏</h4>
+							</div>
+							<div class="panel-body">
+								<form class="form-inline">
+									<div class="form-group">
+										<label class="control-label">搜索</label>
+										<select class="form-control">
+											<option>xxx</option>
+											<option>xxx</option>
+											<option>xxx</option>
+											<option>xxx</option>
+										</select>
+									</div>
+									<div class="input-group">
+										<input type="text" class="form-control" />
+										<span class="input-group-addon">搜索</span>
+									</div>
+								</form>
+							</div>
+							<table class="table table-bordered table-hover">
+								<thead>
+									<tr>
+										<th>编号</th>
+										<th>用户名</th>
+										<th>性别</th>
+										<th>编辑</th>
+									</tr>
+								</thead>
+								<tbody>
+
+								</tbody>
+							</table>
+							<div class="panel-footer">
+								<ul class="pagination">
+									
+								</ul>
+							</div>
+						</div>
+					</div>
+					<!---end usrlist-->
+
+				</div>
+			</div>
+		</div>
+
+	</body>
+
+</html>

@@ -1,0 +1,333 @@
+.pulse{
+	width: 100px;
+	height: 30px;
+	background-color: lightgray;
+	display: inline-block;
+	line-height: 30px;
+	text-align: center;
+	border-radius: 5px;
+	cursor: pointer;
+}
+.pulse:hover{
+	animation-name: pulse;
+	animation-duration: 1s;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+}
+@keyframes pulse{
+	25%{
+		transform: scale(1.1);
+	}
+	75%{
+		transform: scale(.9);
+	}
+}
+.WobbleBottom{
+	width: 200px;
+	height: 30px;
+	background-color: lightgray;
+	display: inline-block;
+	line-height: 30px;
+	text-align: center;
+	border-radius: 5px;
+	cursor: pointer;
+	transform-origin: 100% 0;
+}
+.WobbleBottom:hover{
+	animation-name: WobbleBottom;
+	animation-duration: 1s;
+	animation-timing-function: ease-in-out;
+}
+@keyframes WobbleBottom{
+	16.7%{
+		transform: skew(-12deg);
+	}
+	33.4%{
+		transform: skew(10deg);
+	}
+	50.1%{
+		transform: skew(-6deg);
+	}
+	66.8%{
+		transform: skew(4deg);
+	}
+	83.5%{
+		transform: skew(-2deg);
+	}
+	100%{
+		transform: skew(0deg);
+	}
+}
+.WobbleSkew{
+	width: 200px;
+	height: 30px;
+	background-color: lightgray;
+	display: inline-block;
+	line-height: 30px;
+	text-align: center;
+	border-radius: 5px;
+	cursor: pointer;
+}
+.WobbleSkew:hover{
+	animation-name: WobbleSkew;
+	animation-duration: 1s;
+	animation-timing-function: ease-in-out;
+}
+@keyframes WobbleSkew{
+	16.7%{
+		transform: skew(-12deg);
+	}
+	33.4%{
+		transform: skew(10deg);
+	}
+	50.1%{
+		transform: skew(-6deg);
+	}
+	66.8%{
+		transform: skew(4deg);
+	}
+	83.5%{
+		transform: skew(-2deg);
+	}
+	100%{
+		transform: skew(0deg);
+	}
+}
+.Bob{
+	width: 100px;
+	height: 30px;
+	background-color: lightgray;
+	display: inline-block;
+	line-height: 30px;
+	text-align: center;
+	border-radius: 5px;
+	cursor: pointer;
+}
+.Bob:hover{
+	animation-name:Bob1, Bob2;
+	animation-duration: 0.3s,1.6s;
+	animation-delay: 0s,0.3s;
+	animation-iteration-count: 1,infinite;
+	animation-timing-function: ease-out,ease-in-out;
+	animation-fill-mode: forwards;
+}
+@keyframes Bob1{
+	100%{
+		transform: translateY(-8px);
+	}
+}
+@keyframes Bob2{
+	0%{
+		transform: translateY(-8px);
+	}
+	50%{
+		transform: translateY(-4px);
+	}
+	100%{
+		transform: translateY(-8px);
+	}
+}
+.Sweep-To-Right{
+	position: relative;
+	width: 200px;
+	height: 30px;
+	background-color: lightgray;
+	display: inline-block;
+	line-height: 30px;
+	text-align: center;
+	border-radius: 5px;
+	cursor: pointer;
+	z-index: 1;
+	transition-duration: .6s;
+}
+.Sweep-To-Right:before{
+	content: '';
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	top: 0;
+	z-index: -1;
+	background-color: cornflowerblue;
+	border-radius: 5px;
+	transition-duration: .6s;
+	transition-timing-function: ease-out;
+	transform-origin: 0 50%;
+	transform: scaleX(0);
+}
+.Sweep-To-Right:hover:before,.Sweep-To-Right:hover{
+	color: white;
+	transform: scaleX(1);
+}
+.Radial-In{
+	position: relative;
+	width: 100px;
+	height: 30px;
+	background-color: cornflowerblue;
+	display: inline-block;
+	line-height: 30px;
+	text-align: center;
+	border-radius: 5px;
+	cursor: pointer;
+	z-index: 1;
+	transition-duration: .6s;
+	overflow: hidden;
+	vertical-align: middle;
+}
+.Radial-In:before{
+	content: '';
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	top: 0;
+	z-index: -1;
+	border-radius: 100%;
+	transition-duration: .6s;
+	transition-timing-function: ease-out;
+	background-color: #ccc;
+	transform: scale(2);
+}
+.Radial-In:hover:before,.Radial-In:hover{
+	color: white;
+}
+.Radial-In:hover:before{
+	transform: scale(0);
+}
+.Outline-Out{
+	position: relative;
+	width: 200px;
+	height: 30px;
+	background-color: #ccc;
+	display: inline-block;
+	line-height: 30px;
+	text-align: center;
+	border-radius: 5px;
+	cursor: pointer;
+	vertical-align: middle;
+}
+.Outline-Out:before{
+	content: '';
+	position: absolute;
+	border: 4px solid #ccc;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	top: 0;
+	transition-duration: .6s;
+	border-radius: 5px;
+}
+.Outline-Out:hover:before{
+	left: -6px;
+	right: -6px;
+	bottom: -6px;
+	top: -6px;
+}
+.Outline-In{
+	position: relative;
+	width: 200px;
+	height: 30px;
+	background-color: #ccc;
+	display: inline-block;
+	line-height: 30px;
+	text-align: center;
+	border-radius: 5px;
+	cursor: pointer;
+	vertical-align: middle;
+}
+.Outline-In:before{
+	content: '';
+	position: absolute;
+	border: 4px solid #ccc;
+	left: -12px;
+	right: -12px;
+	bottom: -12px;
+	top: -12px;
+	opacity: 0;
+	transition-duration: .6s;
+	border-radius: 5px;
+}
+.Outline-In:hover:before{
+	left: -6px;
+	right: -6px;
+	bottom: -6px;
+	top: -6px;
+	opacity: 1;
+}
+.Ripple-Out{
+	position: relative;
+	width: 200px;
+	height: 30px;
+	background-color: #ccc;
+	display: inline-block;
+	line-height: 30px;
+	text-align: center;
+	cursor: pointer;
+	vertical-align: middle;
+}
+.Ripple-Out:before{
+	content: '';
+	position: absolute;
+	border: 5px solid #ccc;
+	opacity: 0;
+	left: 0px;
+	right: 0px;
+	bottom: 0px;
+	top: 0px;
+}
+.Ripple-Out:hover:before{
+	animation-duration: .6s;
+	animation-name: Ripple-Out2;
+}
+
+@keyframes Ripple-Out2{
+	25%{
+		left: -5px;
+		right: -5px;
+		bottom: -5px;
+		top: -5px;
+		opacity: 1;
+	}
+	75%{
+		left: -10px;
+		right: -10px;
+		bottom: -10px;
+		top: -10px;
+		opacity: 0.1;
+	}
+	100%{
+		left: -10px;
+		right: -10px;
+		bottom: -10px;
+		top: -10px;
+		opacity: 0;
+	}
+}
+.Underline-From-Left{
+	position: relative;
+	width: 200px;
+	height: 30px;
+	background-color: lightgray;
+	display: inline-block;
+	line-height: 30px;
+	text-align: center;
+	border-radius: 5px;
+	cursor: pointer;
+	z-index: 1;
+}
+.Underline-From-Left:before{
+	content: '';
+	position: absolute;
+	left: 0;
+	right: 100%;
+	bottom: 0;
+	z-index: -1;
+	height: 4px;
+	background-color: cornflowerblue;
+	border-radius: 5px;
+	transition-duration: .6s;
+	transition-timing-function: ease-out;
+}
+.Underline-From-Left:hover:before{
+	right: 0;
+}

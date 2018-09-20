@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/jquery.js" ></script>
+		<style type="text/css">
+			.box{
+				width: 300px;
+				height: 300px;
+				border: 1px solid darkgray;
+				display: inline-block;
+			}
+			.box img{
+				width: 100%;
+			}
+			.big-box{
+				position: relative;
+				top: -305px;
+				left: 301px;
+				width: 600px;
+				height: 600px;
+				border: 1px solid darkgray;
+			}
+			.lin1-1{
+				position: absolute;
+				width: 200px;
+				height: 200px;
+				overflow: hidden;
+				border: 1px slid darkgray;
+				left: 0;
+				top: 0;
+				transition: all 0.6s;
+				transform: scale(0);
+				transition-delay: 0.3s;
+			}
+			.lin1-2{
+				position: absolute;
+				width: 200px;
+				height: 200px;
+				overflow: hidden;
+				border: 1px slid darkgray;
+				left: 200px;
+				top: 0;
+				transition: all 0.6s;
+				transform: scale(0);
+				transition-delay: 0.1s;
+			}
+			.lin1-2 img{
+				transform: translateX(-200px);
+			}
+			.lin1-3{
+				position: absolute;
+				width: 200px;
+				height: 200px;
+				overflow: hidden;
+				left: 400px;
+				top: 0;
+				transition: all 0.6s;
+				transform: scale(0);
+				transition-delay: 0.1s;
+			}
+			.lin1-3 img{
+				transform: translateX(-400px);
+			}
+			.lin2-1{
+				position: absolute;
+				width: 200px;
+				height: 200px;
+				overflow: hidden;
+				left: 0;
+				top: 200px;
+				transition: all 0.6s;
+				transform: scale(0);
+			}
+			.lin2-1 img{
+				transform: translateY(-200px);
+			}
+			.lin2-2{
+				position: absolute;
+				width: 200px;
+				height: 200px;
+				overflow: hidden;
+				left: 200px;
+				top: 200px;
+				transition: all 0.6s;
+				transform: scale(0);
+				transition-delay: 0.2s;
+			}
+			.lin2-2 img{
+				transform: translateX(-200px) translateY(-200px);
+			}
+			.lin2-3{
+				position: absolute;
+				width: 200px;
+				height: 200px;
+				overflow: hidden;
+				left: 400px;
+				top: 200px;
+				transition: all 0.6s;
+				transform: scale(0);
+			}
+			.lin2-3 img{
+				transform: translateX(-400px) translateY(-200px);
+			}
+			.lin3-1{
+				position: absolute;
+				width: 200px;
+				height: 200px;
+				overflow: hidden;
+				left: 0;
+				top: 400px;
+				transition: all 0.6s;
+				transform: scale(0);
+				transition-delay: 0.2s;
+			}
+			.lin3-1 img{
+				transform: translateY(-400px);
+			}
+			.lin3-2{
+				position: absolute;
+				width: 200px;
+				height: 200px;
+				overflow: hidden;
+				left: 200px;
+				top: 400px;
+				transition: all 0.6s;
+				transform: scale(0);
+				transition-delay: 0.1s;
+			}
+			.lin3-2 img{
+				transform: translateX(-200px) translateY(-400px);
+			}
+			.lin3-3{
+				position: absolute;
+				width: 200px;
+				height: 200px;
+				overflow: hidden;
+				left: 400px;
+				top: 400px;
+				transition: all 0.6s;
+				transform: scale(0);
+				transition-delay: 0.4s;
+			}
+			.lin3-3 img{
+				transform: translateX(-400px) translateY(-400px);
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<img src="img/600x600.jpg"> 
+		</div>
+		<div class="big-box">
+			<div class="lin1-1"><img src="img/600x600.jpg"></div>
+			<div class="lin1-2"><img src="img/600x600.jpg"></div>
+			<div class="lin1-3"><img src="img/600x600.jpg"></div>
+			<div class="lin2-1"><img src="img/600x600.jpg"></div>
+			<div class="lin2-2"><img src="img/600x600.jpg"></div>
+			<div class="lin2-3"><img src="img/600x600.jpg"></div>
+			<div class="lin3-1"><img src="img/600x600.jpg"></div>
+			<div class="lin3-2"><img src="img/600x600.jpg"></div>
+			<div class="lin3-3"><img src="img/600x600.jpg"></div>
+		</div>
+		<script type="text/javascript">
+			$(function(){
+				$('.box').click(function(){
+					$('.big-box div').css('transform','scale(1)')
+				})
+				$('.big-box').click(function(){
+					$('.big-box div').css('transform','scale(0)')
+				})
+			})
+		</script>
+	</body>
+</html>

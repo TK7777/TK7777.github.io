@@ -1,0 +1,46 @@
+.a1{
+	width: 900px;
+	height: 300px;
+	margin-top: 30px;
+}
+.a1 figure{
+	float: left;
+	border: gray 1px solid;
+	margin: 0;
+}
+.a1-left{
+	float: left;
+	width: 540px;
+	line-height: 30px;
+	margin-left: 50px;
+}
+.a2{
+	width: 900px;
+	height: 300px;
+}
+.a3{
+	width: 900px;
+	height: 300px;
+}
+.a3-1{
+	width: 900px;
+	height:200px;
+	position: relative;
+}
+.a3-1-1{
+	height:160px;
+	width:180px ;
+	position: absolute;
+	left: 50px;
+	background-image: url(../img/1-3.png);
+	background-position: -35px -41px;
+}
+.a3-1-2{
+	height:160px;
+	width:180px ;
+	position: absolute;
+	left: 250px;
+	background-image: url(../img/1-1.png);
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}

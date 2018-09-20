@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.switch{
+				display: inline-block;
+				width: 130px;
+				height: 40px;
+			}
+			input{
+				display: none;
+			}
+			.slider{
+				background-color:#EAEAEA;
+				color: white;
+				text-align: center;
+				line-height: 40px;
+				border-radius: 10px;
+				cursor: pointer;
+				transition: .5s;
+			}
+			.slider:before{
+				display: inline-block;
+				vertical-align: middle;
+				content: '';
+				width: 16px;
+				height: 16px;
+				background: url(img/input-unchecked.png);
+				margin-right: 2px;
+				margin-top: -3px;
+				transition: .5s;
+			}
+			input:checked+.slider:before{
+				background: url(img/input-checked.png);
+			}
+			input:checked+.slider{
+				background-color: lightblue;
+			}
+		</style>
+	</head>
+	<body>
+		<label class="switch">
+			<input type="radio" name="job"/>
+			<div class="slider">前端工程师</div>
+		</label>
+		<label class="switch">
+			<input type="radio" name="job"/>
+			<div class="slider">视觉设计师</div>
+		</label>
+		<hr>
+		<label class="switch">
+			<input type="checkbox"/>
+			<div class="slider">h5</div>
+		</label>
+		<label class="switch">
+			<input type="checkbox"/>
+			<div class="slider">js</div>
+		</label>
+		<label class="switch">
+			<input type="checkbox"/>
+			<div class="slider">ui</div>
+		</label>
+	</body>
+</html>

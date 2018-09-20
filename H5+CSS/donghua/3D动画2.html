@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.box{
+				width: 100px;
+				height: 100px;
+				perspective: 500px;
+				-webkit-perspective: 500px;
+				margin: 100px auto;
+			}
+			.stage{
+				width: 100px;
+				height: 100px;
+				/*background-color: aliceblue;*/
+				transform-style: preserve-3d;
+				position: relative;
+				/*transform: rotateY(45deg);*/
+				animation: move 3s infinite ease-in-out;
+			}
+			.sid1{
+				position: absolute;
+				background-color: red;
+				width: 100px;
+				height: 100px;
+				transform: rotateY(-90deg) translateZ(100px);
+			}
+			.sid2{
+				position: absolute;
+				background-color: cornflowerblue;
+				width: 100px;
+				height: 100px;
+				transform: rotateY(90deg) translateZ(100px);
+			}
+			.sid3{
+				position: absolute;
+				background-color: darkseagreen;
+				width: 100px;
+				height: 100px;
+				transform:  translateZ(-100px);
+			}
+			.sid4{
+				position: absolute;
+				background-color: greenyellow;
+				width: 100px;
+				height: 100px;
+				transform: translateZ(100px);
+			}
+			.sid5{
+				position: absolute;
+				background-color: orange;
+				width: 100px;
+				height: 100px;
+				transform: rotateX(-90deg) translateZ(100px);
+			}
+			.sid6{
+				position: absolute;
+				background-color: lightcyan;
+				width: 100px;
+				height: 100px;
+				transform: rotateX(90deg) translateZ(100px);
+			}
+			@keyframes move{
+				0%{
+					transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+				}
+				50%{
+					transform: rotateX(360deg) rotateY(0) rotateZ(0deg);
+				}
+				100%{
+					transform: rotateX(360deg) rotateY(360deg) rotateZ(0deg);
+				}
+			}
+			.circular .stage div[class^='sid']{
+				border-radius: 100%;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<div class="stage">
+				<div class="sid1"></div>
+				<div class="sid2"></div>
+				<div class="sid3"></div>
+				<div class="sid4"></div>
+				<div class="sid5"></div>
+				<div class="sid6"></div>
+			</div>
+		</div>
+		<hr>
+		<div class="box circular">
+			<div class="stage">
+				<div class="sid1"></div>
+				<div class="sid2"></div>
+				<div class="sid3"></div>
+				<div class="sid4"></div>
+				<div class="sid5"></div>
+				<div class="sid6"></div>
+			</div>
+		</div>
+	</body>
+</html>

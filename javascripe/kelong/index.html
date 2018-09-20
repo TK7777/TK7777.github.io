@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<title>Title</title>
+		<style>
+			body {
+				margin: 0;
+				text-align: center;
+			}
+			
+			#box {
+				width: 600px;
+				height: 300px;
+				position: relative;
+				margin: auto;
+				background: #ccc;
+			}
+			
+			.circle {
+				width: 50px;
+				height: 50px;
+				border-radius: 50%;
+				background: pink url("img/circle.jpg") center/80px 80px;
+				text-align: center;
+				line-height: 50px;
+				border: 2px solid skyblue;
+				position: absolute;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id='box'>
+			<div class='circle' id='ball'>哈哈哈</div>
+		</div>
+		<input type="button" value='点击克隆20个' onclick="f1()">
+		
+		<script>
+			var box =document.getElementById("box")
+			var ball = document.getElementById("ball")
+			var index = 0;
+			function f1 () {
+				var cp
+				for (var i=0;i<20;i++) {
+					cp = ball.cloneNode(true)
+					var left = parseInt(Math.random()*546)
+					var top = parseInt(Math.random()*246)
+				    cp.style.left=left+'px'
+				    cp.style.top=top+'px'
+				    cp.id='ball'+i
+				    box.appendChild(cp)
+				    cp.ondblclick = function  () {
+				    	this.parentNode.removeChild(this)
+				    }
+				    cp.onclick = function  () {
+				    	index++
+				    	this.style.zIndex=index
+				    }
+				}
+			}				
+				  ball.ondblclick = function  () {
+				    	ball.parentNode.removeChild(ball)
+				    }
+				    ball.onclick = function  () {
+				    	index++
+				    	ball.style.zIndex=index
+				    }
+				    //    单击在上面 双击消失
+			//    onclick
+			//    ondblclick
+		</script>
+	</body>
+
+</html>

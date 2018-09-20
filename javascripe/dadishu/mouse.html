@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<style type="text/css">
+	* {
+	margin: 0;
+	padding: 0;
+}
+body {
+	width: 900px;
+	margin: 0 auto;
+}
+.box {
+	height: 600px;
+	border: 1px solid red;
+	position: relative;
+	background-color: gray;
+}
+div input {
+	width: 100px;
+	height: 30px;
+	border: none;
+	background-color: orange;
+	background: linear-gradient(to bottom, red, yellow);
+	border-radius: 5px;
+	outline: none;
+}
+div input:first-of-type {
+	margin-left: 300px;
+}
+</style>
+</head>
+<body>
+<div class="box" id="box"></div>
+<div>
+	<input type="button" value="开始"/>
+	<input type="button" value="暂停"/>
+</div>
+<script type="text/javascript">
+	var flag = false
+	var btn01 = document.querySelectorAll("input")[0]
+	var btn02 = document.querySelectorAll("input")[1]
+	function createMouse () {
+		var mouseImg = document.createElement("img");
+		mouseImg.setAttribute("src", "img/mouse.png");
+		mouseImg.style.width = '100px';
+		mouseImg.style.height = '100px';
+		mouseImg.style.position = "absolute";
+		mouseImg.onclick = function  () {
+			this.parentElement.removeChild(this);
+		}
+		return mouseImg;
+	}
+	var intervalId;
+	function rePeatCreateMouse(){
+		intervalId = window.setInterval(function () {
+			var mouse = createMouse();
+			var left = randomInt(0, 800);
+			var top = randomInt(0, 500);
+			mouse.style.left = left + "px";
+			mouse.style.top = top + "px";
+			box.appendChild(mouse);
+			judgeGameOver();
+		}, 500);
+	}
+	function randomInt (m, n) {
+		return parseInt(Math.random() * (n - m + 1) + m);
+	}
+	//让游戏结束
+	function judgeGameOver () {
+		var mouseCount = box.childElementCount;
+		if(mouseCount >= 10){
+			//结束周期任务
+			window.clearInterval(intervalId);
+			console.log('intervalId = ' + intervalId)
+			intervalId = 0;
+			for(var i = 0; i < mouseCount; i++){
+				box.removeChild(box.children[0]);
+			}
+			var endImg = document.createElement("img");
+			endImg.style.position = "absolute";
+			endImg.className = "end";
+			endImg.src = "img/end.png";
+			endImg.onclick = null;
+			endImg.style.width = '500px';
+			endImg.style.height = '500px';
+			endImg.style.left = "250px";
+			box.appendChild(endImg);
+			flag = true
+			btn01.value = '重新开始'
+		}
+	}
+	btn01.onclick = function () {
+		if(intervalId){
+			return
+		}
+		for(var i = 0; i < box.children.length; ){
+			box.removeChild(box.children[i]);
+		}
+		if(this.value == '重新开始'){
+			rePeatCreateMouse()
+			flag = false
+			this.value = '开始'
+		}else if(this.value == '开始'){
+			rePeatCreateMouse()
+			this.value = '重新开始'
+		}
+	}
+	btn02.onclick = function (){
+		if(flag){
+			return
+		}
+		if(this.value == '暂停'){
+			clearInterval(intervalId);
+			this.value = '继续';
+		}else{
+			rePeatCreateMouse()
+			this.value = '暂停';
+		}
+	}
+</script>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/jquery.js"></script>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			#fdj {
+				width: 800px;
+				margin: 20px auto;
+			}
+			
+			.small {
+				width: 350px;
+				height: 449px;
+				border: 1px solid #000000;
+				float: left;
+				position: relative;
+			}
+			
+			.small div {
+				width: 100px;
+				height: 100px;
+				background-color: rgba(255, 255, 0, 0.3);
+				position: absolute;
+				top: 0;
+				left: 0;
+				border: 1px solid red;
+				/*display: none;*/
+				cursor: move;
+			}
+			
+			.big {
+				width: 400px;
+				height: 449px;
+				border: 1px solid #000000;
+				float: left;
+				display: none;
+				overflow: hidden;
+				position: relative;
+			}
+			
+			.big img {
+				display: block;
+				position: absolute;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="fdj">
+			<div class="small">
+				<img src="img/small.jpg" />
+				<div class="pop"></div>
+			</div>
+			<div class="big">
+				<img src="img/big.jpg" width="900" height="1026" />
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		$(function() {
+			var maxLeft
+			var maxTop
+			$('.small').mouseover(function() {
+				$('.pop').css('display', 'block')
+				$('.big').css('display', 'block')
+				maxLeft = $('.small')[0].offsetWidth - $('.pop')[0].offsetWidth
+				maxTop = $('.small')[0].offsetHeight - $('.pop')[0].offsetHeight
+			})
+			$('.small').mousemove(function(e) {
+				var popLeft = e.clientX - $('.small').offset().left -$('.pop').width()/2
+				var popTop = e.clientY - $('.small').offset().top -$('.pop').height()/2
+				popLeft = popLeft <= 0 ? 0 : popLeft
+				popTop = popTop <= 0 ? 0 : popTop
+				popLeft = popLeft >= maxLeft ? maxLeft : popLeft
+				popTop = popTop >= maxTop ? maxTop : popTop
+				$('.pop').css('left',popLeft+'px')
+				$('.pop').css('top',popTop+'px')
+				$('img:eq(1)').css('left',-popLeft / maxLeft * 350 + "px")
+				$('img:eq(1)').css('top',-popTop / maxTop * 550 + "px")
+			})
+		})
+	</script>
+
+</html>

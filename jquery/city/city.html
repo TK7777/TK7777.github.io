@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>Document</title>
+		<script type="text/javascript" src="js/citys.js"></script>
+		<script type="text/javascript" src="js/jquery.js"></script>
+	</head>
+
+	<body>
+		<select id="province"></select>
+		<select id="city">
+			<option>请选择</option>
+		</select>
+		<select id="area">
+			<option>请选择</option>
+		</select>
+		<script type="text/javascript">
+			$(function() {
+				var provinceStr = '';
+				for(var i in citiesall) {
+					provinceStr += '<option>' + citiesall[i].name + '</option>';
+				}
+				$('#province').html(provinceStr).change(function() {
+					var provinceName = $(this).val();
+					for(var i in citiesall) {
+						if(provinceName == citiesall[i].name) {
+							var cityStr = '';
+							var citys = citiesall[i].city;
+							for(var j in citys) {
+								cityStr += '<option>' + citys[j].name + '</option>';
+							}
+							$('#city').html(cityStr);
+							var cityName = $('#city').val();
+							for(var k in citys) {
+								if(cityName == citys[k].name) {
+									var areaStr = '';
+									var areas = citys[k].area;
+									for(var n in areas) {
+										areaStr += '<option>' + areas[n] + '</option>';
+									}
+									$('#area').html(areaStr);
+								}
+							}
+						}
+					}
+				})
+
+				$('#city').change(function() {
+					for(var i in citiesall) {
+						var citys = citiesall[i].city;
+						var areaName = $(this).val();
+						for(var j in citys) {
+							if(areaName == citys[j].name) {
+								var areas = citys[j].area;
+								var areaStr = '';
+								for(var n in areas) {
+									areaStr += '<option>' + areas[n] + '</option>';
+								}
+								$('#area').html(areaStr);
+							}
+						}
+					}
+				})
+			})
+		</script>
+	</body>
+
+</html>
