@@ -10,5 +10,5 @@
 [小球移动](https://tk7777.github.io/javascripe/xiaoqiu/)https://tk7777.github.io/javascripe/xiaoqiu/<br/>
 [三级联动](https://tk7777.github.io/jquery/city/city.html)https://tk7777.github.io/jquery/city/city.html<br/>
 [放大镜](https://tk7777.github.io/jquery/fangdajing/)https://tk7777.github.io/jquery/fangdajing/<br/>
-[垃圾桶](https://tk7777.github.io/jquery/lajitong/)https://tk7777.github.io/jquery/lajitong/
+[垃圾桶](https://tk7777.github.io/jquery/lajitong/)https://tk7777.github.io/jquery/lajitong/<br/>
 [按钮与菜单](https://tk7777.github.io/jquery/donghua/)https://tk7777.github.io/jquery/donghua/
