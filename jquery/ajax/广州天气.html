@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/jquery.js"></script>
+		<style type="text/css">
+			.tianqi {
+				width: 60%;
+				height: 100%;
+			}
+			
+			td {
+				text-align: center;
+			}
+		</style>
+	</head>
+
+	<body>
+		<table class="tianqi" border="1">
+			<tr class="riqi"></tr>
+			<tr class="high"></tr>
+			<tr class="low"></tr>
+			<tr class="fengxiang"></tr>
+			<tr class="trip"><td colspan="6"></td></tr>
+		</table>
+		<script type="text/javascript">
+			$.get("https://www.apiopen.top/weatherApi", {
+				city: "广州"
+			}, function(data, textStatus, jqXHR) {
+				var arr1 = data.data.forecast;
+				var arr2 = data.data.yesterday;
+				var trip = data.data.ganmao;
+				console.log(arr2)
+				//				console.log(arr1);
+				$('.riqi').append("<td>" + arr2.date + "</td>")
+				$('.high').append("<td>" + arr2.high + "</td>")
+				$('.low').append("<td>" + arr2.low + "</td>")
+				$('.fengxiang').append("<td>" + arr2.fx + "</td>")
+				$('.trip td').html(trip)
+				$.each(arr1, function(index, value) {
+					//					console.log(arr1[index].date);
+					console.log(value);
+					$('.riqi').append("<td>" + value.date + "</td>")
+					$('.high').append("<td>" + value.high + "</td>")
+					$('.low').append("<td>" + value.low + "</td>")
+					$('.fengxiang').append("<td>" + value.fengxiang + "</td>")
+				});
+			})
+		</script>
+	</body>
+
+</html>
