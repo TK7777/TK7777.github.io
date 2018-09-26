@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/jquery.js"></script>
+		<script type="text/javascript" src="js/轮播.js" ></script>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			.box {
+				overflow: hidden;
+				border: 1px solid gray;
+				width: 200px;
+				height: 200px;
+				margin: 100px auto;
+				position: relative;
+				z-index: 0;
+			}
+			
+			.box .next {
+				text-align: center;
+				line-height: 20px;
+				font-size: 20px;
+				width: 20px;
+				height: 20px;
+				z-index: 1;
+				left: 90%;
+				top: 45%;
+				background-color: rgba(0, 0, 0, 0.3);
+				position: absolute;
+			}
+			
+			.box .up {
+				text-align: center;
+				line-height: 20px;
+				font-size: 20px;
+				width: 20px;
+				height: 20px;
+				z-index: 1;
+				left: 0%;
+				top: 45%;
+				background-color: rgba(0, 0, 0, 0.3);
+				position: absolute;
+			}
+			
+			.img-box {
+				width: 1111800px;
+				height: 200px;
+				position: absolute;
+				left: 0;
+				top: 0;
+				transition: 0.6s;
+			}
+			
+			.img-box img {
+				float: left;
+			}
+			
+			.pop {
+				position: absolute;
+				z-index: 1;
+				left: 35%;
+				top: 85%;
+			}
+			
+			.pop span {
+				display: inline-block;
+				border-radius: 50%;
+				width: 10px;
+				height: 10px;
+				background-color: rgba(0, 0, 0, 0.5);
+				font-size: 0;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="box">
+			<div class="next">></div>
+			<div class="up">
+				<</div>
+					<div class="pop">
+						<span style="background: white;">1</span>
+						<span>2</span>
+						<span>3</span>
+						<span>4</span>
+						<span>5</span>
+						<span>6</span>
+					</div>
+					<div class="img-box">
+						<img src="img/1.jpg">
+						<img src="img/2.jpg">
+						<img src="img/3.jpg">
+						<img src="img/4.jpg">
+						<img src="img/5.jpg">
+						<img src="img/6.jpg">
+					</div>
+			</div>
+			<script type="text/javascript">
+					go(6)//此处填写轮播图片输
+			</script>
+	</body>
+
+</html>
