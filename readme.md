@@ -13,3 +13,6 @@
 [垃圾桶](https://tk7777.github.io/jquery/lajitong/)https://tk7777.github.io/jquery/lajitong/<br/>
 [按钮与菜单](https://tk7777.github.io/jquery/donghua/)https://tk7777.github.io/jquery/donghua/<br/>
 [天气](https://tk7777.github.io/jquery/ajax/%E5%B9%BF%E5%B7%9E%E5%A4%A9%E6%B0%94.html)https://tk7777.github.io/jquery/ajax/%E5%B9%BF%E5%B7%9E%E5%A4%A9%E6%B0%94.html<br/>
+
+[轮播](https://tk7777.github.io/jquery/lunbo/%E8%BD%AE%E6%92%AD(%E6%8F%92%E4%BB%B6%E5%BC%8F).html)
+https://tk7777.github.io/jquery/lunbo/%E8%BD%AE%E6%92%AD(%E6%8F%92%E4%BB%B6%E5%BC%8F).html
