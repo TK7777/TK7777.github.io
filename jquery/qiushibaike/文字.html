@@ -116,7 +116,7 @@
 				<div class="collapse navbar-collapse" id="topMenu">
 					<ul class="nav navbar-nav ul-style">
 						<li>
-							<a href="index.html" style="border-bottom: 5px solid #7A4624;">热门</a>
+							<a href="index.html" >热门</a>
 						</li>
 						<li>
 							<a href="#">24小时</a>
@@ -125,7 +125,7 @@
 							<a href="#">热图</a>
 						</li>
 						<li>
-							<a href="文字.html">文字</a>
+							<a href="文字.html" style="border-bottom: 5px solid #7A4624;">文字</a>
 						</li>
 						<li>
 							<a href="#">穿越</a>
@@ -171,7 +171,7 @@
 				</div>
 			</div>
 		</div>	
-		
+
 		<script>
 			$(function() {
 //				$('a').click(function(e){
@@ -191,17 +191,16 @@
 
 
 				function add(page){
-					$.get('shipin/page'+page+'.json', function(data, textStatus, jqXHR) {
+					$.get('chunwen/page'+page+'.json', function(data, textStatus, jqXHR) {
 					var data = data.items
 					$.each(data, function(index, value) {
 						var touxiang = value.user.thumb
 						var username = value.user.login
-						var neirong = value.high_url
-						console.log(neirong)
+						var neirong = value.content
 						var up = value.votes.up
 						var down = value.votes.down
-						$('.c2').append('<div class="row"><div class="col-md-8 col-md-push-2 c2-box"><div class="h"><div class="touxiang"><img src='+touxiang+'></div><div class="username">'+username+'</div></div><div class="b"><video controls="controls" width="100%" height="500px"><source src="'+neirong+'"></source></video></div><div class="f"><a href="#"><i class="glyphicon glyphicon-thumbs-up">'+up+'</i></a><a href="#"><i class="glyphicon glyphicon-thumbs-down">'+down+'</i></a></div></div></div>')
-					},'jsonp')
+						$('.c2').append('<div class="row"><div class="col-md-8 col-md-push-2 c2-box"><div class="h"><div class="touxiang"><img src='+touxiang+'></div><div class="username">'+username+'</div></div><div class="b">' + neirong + '</div><div class="f"><a href="#"><i class="glyphicon glyphicon-thumbs-up">'+up+'</i></a><a href="#"><i class="glyphicon glyphicon-thumbs-down">'+down+'</i></a></div></div></div>')
+					})
 					})
 				}
 				
