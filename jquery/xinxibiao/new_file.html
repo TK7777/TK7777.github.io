@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="../../2018.10.11/js/jquery.js" ></script>
+	</head>
+	<body>
+		<table border="1">
+			<tr class="one">
+				<th></th>
+				<th>姓名</th>
+				<th>薪水</th>
+				<th>年龄</th>
+			</tr>
+			<tr>
+				<td><input type="checkbox"></td>
+				<td>李三</td>
+				<td>20000</td>
+				<td>23</td>
+			</tr>
+			<tr>
+				<td><input type="checkbox"></td>
+				<td>李四</td>
+				<td>22000</td>
+				<td>22</td>
+			</tr>
+			<tr>
+				<td><input type="checkbox"></td>
+				<td>王五</td>
+				<td>14000</td>
+				<td>26</td>
+			</tr>
+			<tr>
+				<td><input type="checkbox"></td>
+				<td>马六</td>
+				<td>15000</td>
+				<td>21</td>
+			</tr>
+		</table>
+		<script type="text/javascript">
+			$('tr:nth-child(even)').css('background','lightblue')
+			$('.one').css('background','darkgray')
+			$('input').click(function(){
+				if ($(this).prop('checked')) {
+					$(this).parent().parent().css('background','yellow')
+				}else{
+					$('tr:nth-child(even)').css('background','lightblue')
+					$('tr:nth-child(odd)').css('background','none')
+					$('.one').css('background','darkgray')
+				}
+			})
+		</script>
+	</body>
+</html>
